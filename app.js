@@ -12,7 +12,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 
-// const MONGO_URL = "mongodb://127.0.0.1:27017/Portfolio";
 const DB_URL = process.env.ATLASDB_URL;
 
 main()
