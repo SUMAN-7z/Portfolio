@@ -25,9 +25,9 @@ async function main() {
   await mongoose.connect(DB_URL);
 }
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "../Frontend/views"));
+app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname, "../Frontend/public")));
+app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 
 const store = MongoStore.create({
@@ -85,7 +85,7 @@ app.post(
 
 app.get("/Admin", async (req, res) => {
   const { AccessToken } = req.query;
-  if (AccessToken === "8144975283") {
+  if (AccessToken === process.env.AccessToken) {
     const allMessages = await Message.find({});
     res.render("Messages/allMessages.ejs", { allMessages });
   } else {
