@@ -1,0 +1,183 @@
+<div class="skills-wrapper">
+  <!-- Skills Section -->
+  <div id="Skill-sec">
+    <h2 class="skill-head">My Skills</h2>
+    <h3 class="skill-h3">
+      Technologies and tools I've worked with throughout my projects
+    </h3>
+
+    <!-- Frontend Skills -->
+    <div class="skill-category">
+      <h3>Frontend</h3>
+      <div class="skill-icons">
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript"
+            />
+          </div>
+          <div class="skill-label">JavaScript</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+              alt="React.js"
+            />
+          </div>
+          <div class="skill-label">React.js</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+              alt="HTML"
+            />
+          </div>
+          <div class="skill-label">HTML</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+              alt="CSS"
+            />
+          </div>
+          <div class="skill-label">CSS</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+              alt="Bootstrap"
+            />
+          </div>
+          <div class="skill-label">Bootstrap</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Databases -->
+    <div class="skill-category">
+      <h3>Databases</h3>
+      <div class="skill-icons">
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+              alt="MongoDB"
+            />
+          </div>
+          <div class="skill-label">MongoDB</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+              alt="MySQL"
+            />
+          </div>
+          <div class="skill-label">MySQL</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Backend -->
+    <div class="skill-category">
+      <h3>Backend</h3>
+      <div class="skill-icons">
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+              alt="Node.js"
+            />
+          </div>
+          <div class="skill-label">Node.js</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"
+              alt="Express.js"
+            />
+          </div>
+          <div class="skill-label">Express.js</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools & Platforms -->
+    <div class="skill-category">
+      <h3>Tools & Platforms</h3>
+      <div class="skill-icons">
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+              alt="Git"
+            />
+          </div>
+          <div class="skill-label">Git</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+              alt="GitHub"
+            />
+          </div>
+          <div class="skill-label">GitHub</div>
+        </div>
+        <div class="skill-item">
+          <div class="icon-circle">
+            <img
+              src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+              alt="VS Code"
+            />
+          </div>
+          <div class="skill-label">VS Code</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Illustration Image -->
+  <div class="skills-image">
+    <img src="/Photo.svg" alt="Skills Illustration" />
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const skillSection = document.getElementById("Skill-sec");
+    const skillItems = skillSection.querySelectorAll(".skill-item");
+    const skillHead = skillSection.querySelector(".skill-head");
+    const skillSub = skillSection.querySelector(".skill-h3");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate the title and subtitle
+            skillHead.style.animation = "slideInLeft 2s ease forwards";
+            skillSub.style.animation = "slideInLeft 2s ease 0.2s forwards";
+
+            // Animate skill icons one by one
+            skillItems.forEach((item, index) => {
+              setTimeout(() => {
+                item.style.animation = "slideInLeft 0.8s ease forwards";
+              }, 200 + index * 150); // start after subtitle
+            });
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(skillSection);
+  });
+</script>

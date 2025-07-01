@@ -1,0 +1,22 @@
+<style>
+  .glass-alert {
+    background: rgba(255, 255, 255, 0.2); /* transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px); /* frosted effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    color: #000; /* dark text for contrast */
+    box-shadow: 0 10px 32px 0 rgba(35, 42, 143, 0.351);
+    border-radius: 12px;
+  }
+</style>
+<% if (success && success.length > 0) { %>
+<div class="alert glass-alert alert-dismissible fade show col-6 offset-3 mt-4">
+  <%= success %>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+  ></button>
+</div>
+<% } %>

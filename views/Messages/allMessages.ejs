@@ -1,0 +1,82 @@
+<style>
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.08); /* More transparent */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    color: #000000;
+    box-shadow: 0 4px 30px rgba(7, 255, 255, 0.118) !important; /* Glow effect */
+  }
+
+  body.dark-theme .glass-card {
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .card-animate {
+    opacity: 0;
+  }
+</style>
+<% layout("/layouts/boilerplate") %>
+
+<div id="message-sec" class="container my-3">
+  <h2 class="text-center mb-4">All Messages</h2>
+  <div class="row g-4">
+    <% allMessages.forEach((message) => { %>
+    <div class="col-12 d-flex justify-content-center">
+      <div
+        class="p-4 rounded shadow-sm glass-card card-animate h-100"
+        style="width: 100%; max-width: 60vw"
+      >
+        <h5 class="fw-bold mb-2">Message</h5>
+        <h6 class="mb-1">Name : <%= message.Name %></h6>
+        <p class="mb-1">Email : <%= message.Email %></p>
+        <p class="mb-2"><%= message.Message %></p>
+        <p class="small mb-0">
+          Sent on: <%= message.createdAt.toLocaleString() %>
+        </p>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+
+<!-- this is for allMessage.ejs animation start -->
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const messageCards = document.querySelectorAll(".card-animate");
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animation = "fadeInUp 1s ease forwards";
+            observer.unobserve(entry.target); // Run once per card
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    messageCards.forEach((card, index) => {
+      card.style.animationDelay = `${index * 150}ms`;
+      observer.observe(card);
+    });
+  });
+</script>
+
+<!-- this is for allMessage.ejs animation start -->
