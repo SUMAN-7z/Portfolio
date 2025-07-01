@@ -25,9 +25,9 @@ async function main() {
   await mongoose.connect(DB_URL);
 }
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "../Frontend/views"));
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "../Frontend/public")));
 app.use(express.urlencoded({ extended: true }));
 
 const store = MongoStore.create({
