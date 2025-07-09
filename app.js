@@ -16,7 +16,7 @@ PORT = process.env.PORT;
 
 // const DB_URL = process.env.ATLASDB_URL;
 
-const DB_URL = process.env.ATLAS_DB_URL || process.env.LOCAL_DB_URL;
+const DB_URL = process.env.ATLASDB_URL || process.env.LOCAL_DB_URL;
 
 main()
   .then(() => {
