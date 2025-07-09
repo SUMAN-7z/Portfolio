@@ -1,11 +1,25 @@
+<style>
+  .cert-card {
+    display: flex;
+    flex-direction: row-reverse; /* For desktop: image on left, content on right */
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  /* Responsive: stack vertically */
+  @media (max-width: 768px) {
+    .cert-card {
+      flex-direction: column;
+    }
+
+    .cert-image {
+      order: -1;
+    }
+  }
+</style>
 <div id="Certificate">
   <h2 class="Cert-head popup-up-section">Certificates</h2>
   <div class="cert-card popup-up-section">
-    <!-- Left: Certificate Image -->
-    <div class="cert-image">
-      <img src="/certificates/Certificate.png" alt="Certificate Thumbnail" />
-    </div>
-
     <!-- Right: Certificate Details -->
     <div class="cert-content">
       <h2>Full Stack Developer Certificate</h2>
@@ -47,6 +61,10 @@
           <i class="bi bi-filetype-pdf"></i> View Certificate
         </a>
       </div>
+    </div>
+    <!-- Left: Certificate Image -->
+    <div class="cert-image">
+      <img src="/certificates/Certificate.png" alt="Certificate Thumbnail" />
     </div>
   </div>
 </div>

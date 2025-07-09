@@ -114,3 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //this is for Experiance, Education,project and Certificate .ejs   End
 
+//typing effect in hero section start
+
+
+
+//typing effect in hero section end

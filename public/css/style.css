@@ -51,39 +51,31 @@ html {
 }
 
 /* typing animation in idex.ejs Start */
-
-.typing-text {
-  overflow: hidden; /* Hide the overflowing text */
-  white-space: nowrap; /* Keep it in one line */
-  border-right: 2.5px solid #000; /* Cursor effect */
-  width: 0; /* Start with no width */
-  animation: typing 3s steps(14, end) forwards, blink 0.7s step-end infinite;
+.detail h5 span {
+  display: inline-block;
+  min-width: 130px;
+  overflow: hidden;
+  white-space: nowrap;
 }
-
-body.dark-theme .typing-text {
-  border-right: 3px solid #fff;
+.detail h5 span::after {
+  content: "|";
+  animation: blink 0.7s steps(1) infinite;
 }
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 14ch;
-  } /* Adjust to match your text length */
-}
-
 @keyframes blink {
+  0% {
+    opacity: 1;
+  }
   50% {
-    border-color: transparent;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
+/* typing animation in idex.ejs end  */
 
-
-/* typing animation in idex.ejs Start */
-
-/* Experience section start */
+/* Experience section start
 /* Container Styling */
 #section2 {
   max-width: 85vw;
@@ -359,6 +351,10 @@ body.dark-theme .typing-text {
   font-size: 14px;
   color: #333;
 }
+
+
+
+
 /* My skill section End */
 
 /* ContactMe Section Start */
@@ -651,7 +647,6 @@ textarea {
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
 
 /* Navbar toogle button Styling Start */
 

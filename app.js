@@ -12,7 +12,11 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 
-const DB_URL = process.env.ATLASDB_URL;
+PORT = process.env.PORT;
+
+// const DB_URL = process.env.ATLASDB_URL;
+
+const DB_URL = process.env.ATLAS_DB_URL || process.env.LOCAL_DB_URL;
 
 main()
   .then(() => {
@@ -102,6 +106,6 @@ app.use((error, req, res, next) => {
   res.status(status).render("error.ejs", { error });
 });
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
   console.log("server is listening to port 8080");
 });
