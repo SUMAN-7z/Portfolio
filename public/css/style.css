@@ -609,7 +609,8 @@ textarea {
 /* =================== Buttons =================== */
 .a-1 {
   padding: 8px 16px;
-  background: linear-gradient(90deg, #a100ff, #ff6a00);
+  //background: linear-gradient(90deg, #a100ff, #ff6a00);
+  background: black;
   color: white;
   font-weight: 700;
   border-radius: 16px;
