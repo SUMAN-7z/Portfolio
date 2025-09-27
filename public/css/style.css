@@ -609,7 +609,18 @@ textarea {
 /* =================== Buttons =================== */
 .a-1 {
   padding: 8px 16px;
-  background: linear-gradient(90deg, #a100ff, #ff6a00);
+  background: linear-gradient(
+    -60deg,
+    #a100ff,
+    #d300c0,
+    #ff006a,
+    #ff6a00,
+    #ff9500,
+    #ff6a00,
+    #a100ff
+  );
+  background-size: 500%;
+  animation: animate 10s ease-in-out infinite;
   color: white;
   font-weight: 700;
   border-radius: 16px;
@@ -619,6 +630,24 @@ textarea {
   align-items: center;
   gap: 6px;
 }
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 100% 0;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
 
 .a-2 {
   padding: 8px 12px;

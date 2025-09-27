@@ -1,4 +1,4 @@
-const words = ["Full Stack Developer  ", "MERN Stack Dev ", "Web Application Developer  "];
+const words = ["Full Stack Developer  ", "MERN Stack Developer ", "Web Application Developer  "];
 const typingText = document.getElementById("typing-text");
 let wordIndex = 0;
 let charIndex = 0;
