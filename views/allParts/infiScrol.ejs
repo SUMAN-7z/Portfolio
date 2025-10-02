@@ -1,0 +1,305 @@
+<!-- Devicon CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+
+<style>
+  :root {
+    --gap: 1rem;
+    --card-min: 90px;
+    --card-max: 180px;
+    --card-height: 120px;
+    --speed-top: 15s;
+    --speed-bottom: 12s;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: "Poppins", system-ui, sans-serif;
+    background: #f9faff;
+    color: #0a2b2a;
+  }
+
+  /* marquee container */
+  .marquee-container {
+    max-width: 1200px;
+    margin: 4rem auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+    padding-top: 30px;
+    padding-top: 30px;
+  }
+
+  /* marquee track */
+  .marquee {
+    display: flex;
+    width: max-content;
+    gap: var(--gap);
+    animation: marquee linear infinite;
+    will-change: transform;
+  }
+
+  .marquee.reverse {
+    animation-direction: reverse;
+  }
+
+  /* card style */
+  .card {
+    flex: 0 0 clamp(var(--card-min), 10vw, var(--card-max));
+    height: clamp(92px, 9vw, var(--card-height));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #ffffff, #f1faff);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    padding: 1rem;
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+    transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+    user-select: none;
+  }
+
+  .card i {
+    font-size: 2.4rem;
+  }
+
+  .card span {
+    font-weight: 500;
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .card.in {
+    animation: popIn 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .card:hover {
+    transform: scale(1.12) rotate(-3deg);
+    background: linear-gradient(135deg, #d6faff, #ffffff);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  }
+
+  /* animations */
+  @keyframes popIn {
+    0% {
+      opacity: 0;
+      transform: translateY(16px) scale(0.97);
+    }
+    60% {
+      opacity: 1;
+      transform: translateY(-4px) scale(1.03);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .card i {
+      font-size: 2rem;
+    }
+    .card span {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .marquee-container {
+      gap: 1.5rem;
+    }
+    .card {
+      padding: 0.8rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card i {
+      font-size: 1.6rem;
+    }
+    .card span {
+      font-size: 0.85rem;
+    }
+  }
+</style>
+
+<div class="marquee-container">
+  <!-- Top row -->
+  <div class="marquee" style="animation-duration: var(--speed-top)">
+    <div class="card">
+      <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+    </div>
+    <div class="card">
+      <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+    </div>
+    <div class="card">
+      <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+    </div>
+    <div class="card">
+      <i class="devicon-react-original colored"></i><span>React</span>
+    </div>
+    <div class="card">
+      <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
+    </div>
+    <div class="card">
+      <i class="devicon-python-plain colored"></i><span>Python</span>
+    </div>
+    <div class="card">
+      <i class="devicon-cplusplus-plain colored"></i><span>C++</span>
+    </div>
+    <div class="card">
+      <i class="devicon-git-plain colored"></i><span>Git & GitHub</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+    </div>
+    <div class="card">
+      <i class="devicon-java-plain colored"></i><span>Java</span>
+    </div>
+    <div class="card">
+      <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+    </div>
+    <div class="card">
+      <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+    </div>
+    <div class="card">
+      <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+    </div>
+    <div class="card">
+      <i class="devicon-react-original colored"></i><span>React</span>
+    </div>
+    <div class="card">
+      <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
+    </div>
+    <div class="card">
+      <i class="devicon-python-plain colored"></i><span>Python</span>
+    </div>
+    <div class="card">
+      <i class="devicon-cplusplus-plain colored"></i><span>C++</span>
+    </div>
+    <div class="card">
+      <i class="devicon-git-plain colored"></i><span>Git & GitHub</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+    </div>
+    <div class="card">
+      <i class="devicon-java-plain colored"></i><span>Java</span>
+    </div>
+  </div>
+
+  <!-- Bottom row -->
+  <div class="marquee reverse" style="animation-duration: var(--speed-bottom)">
+    <div class="card">
+      <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+    </div>
+    <div class="card">
+      <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+    </div>
+    <div class="card">
+      <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+    </div>
+    <div class="card">
+      <i class="devicon-react-original colored"></i><span>React</span>
+    </div>
+    <div class="card">
+      <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
+    </div>
+    <div class="card">
+      <i class="devicon-python-plain colored"></i><span>Python</span>
+    </div>
+    <div class="card">
+      <i class="devicon-cplusplus-plain colored"></i><span>C++</span>
+    </div>
+    <div class="card">
+      <i class="devicon-git-plain colored"></i><span>Git & GitHub</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+    </div>
+    <div class="card">
+      <i class="devicon-java-plain colored"></i><span>Java</span>
+    </div>
+    <div class="card">
+      <i class="devicon-html5-plain colored"></i><span>HTML5</span>
+    </div>
+    <div class="card">
+      <i class="devicon-css3-plain colored"></i><span>CSS3</span>
+    </div>
+    <div class="card">
+      <i class="devicon-javascript-plain colored"></i><span>JavaScript</span>
+    </div>
+    <div class="card">
+      <i class="devicon-react-original colored"></i><span>React</span>
+    </div>
+    <div class="card">
+      <i class="devicon-nodejs-plain colored"></i><span>Node.js</span>
+    </div>
+    <div class="card">
+      <i class="devicon-python-plain colored"></i><span>Python</span>
+    </div>
+    <div class="card">
+      <i class="devicon-cplusplus-plain colored"></i><span>C++</span>
+    </div>
+    <div class="card">
+      <i class="devicon-git-plain colored"></i><span>Git & GitHub</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mysql-plain colored"></i><span>MySQL</span>
+    </div>
+    <div class="card">
+      <i class="devicon-mongodb-plain colored"></i><span>MongoDB</span>
+    </div>
+    <div class="card">
+      <i class="devicon-java-plain colored"></i><span>Java</span>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Pop-in animation when cards enter viewport
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in");
+        }
+      });
+    },
+    { threshold: 0.75 }
+  );
+
+  document.querySelectorAll(".card").forEach((card) => observer.observe(card));
+</script>
