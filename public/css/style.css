@@ -4,6 +4,64 @@
 html {
   scroll-behavior: smooth !important;
 }
+
+/* Desig scroolbar start */
+/* === Futuristic Neon Scrollbar === */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: radial-gradient(circle at 50% 50%, #111 0%, #000 80%);
+  box-shadow: inset 0 0 6px rgba(0, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    120deg,
+    #00fff2,
+    #0091ff,
+    #7a00ff,
+    #ff00c8,
+    #ff007a
+  );
+  background-size: 400%;
+  border-radius: 10px;
+  animation: neonFlow 6s linear infinite;
+  box-shadow:
+    0 0 10px #00fff2,
+    0 0 20px #0091ff,
+    0 0 30px #7a00ff;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  box-shadow:
+    0 0 15px #00fff2,
+    0 0 25px #0091ff,
+    0 0 35px #7a00ff,
+    0 0 45px #ff00c8;
+  filter: brightness(1.3);
+  cursor: pointer;
+}
+
+@keyframes neonFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/* Desig scroolbar end */
+
 .box {
   width: 145px !important;
   height: 100px;
@@ -352,9 +410,6 @@ html {
   color: #333;
 }
 
-
-
-
 /* My skill section End */
 
 /* ContactMe Section Start */
@@ -648,7 +703,6 @@ textarea {
   }
 }
 
-
 .a-2 {
   padding: 8px 12px;
   border: 2px solid black;
@@ -807,12 +861,10 @@ body.dark-theme textarea:focus {
   border-color: #000;
 }
 
-body.dark-theme input::placeholder ,
-body.dark-theme textarea::placeholder{
-  color: #888 ; 
+body.dark-theme input::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #888;
 }
-
-
 
 body.dark-theme label {
   color: #fffbfb;
