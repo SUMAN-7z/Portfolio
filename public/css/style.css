@@ -5,15 +5,19 @@ html {
   scroll-behavior: smooth !important;
 }
 
-/* Desig scroolbar start */
-/* === Futuristic Neon Scrollbar === */
+/* ============================================================
+   ⚡ Futuristic Neon Scrollbar Design
+   Sleek, animated gradient scrollbar with glowing neon effects
+   Works beautifully on dark or space-themed portfolios
+   ============================================================ */
+
 ::-webkit-scrollbar {
-  width: 7px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: radial-gradient(circle at 50% 50%, #111 0%, #000 80%);
-  box-shadow: inset 0 0 6px rgba(0, 255, 255, 0.2);
+  background: radial-gradient(circle at 50% 50%, #0a0a0a 0%, #000 90%);
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.15);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -26,27 +30,78 @@ html {
     #ff007a
   );
   background-size: 400%;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
   animation: neonFlow 6s linear infinite;
-  box-shadow:
-    0 0 10px #00fff2,
-    0 0 20px #0091ff,
-    0 0 30px #7a00ff;
-  border: 2px solid rgba(255, 255, 255, 0.15);
-  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #00fff2, 0 0 16px #0091ff, 0 0 24px #7a00ff;
+  transition: box-shadow 0.4s ease, filter 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  box-shadow:
-    0 0 15px #00fff2,
-    0 0 25px #0091ff,
-    0 0 35px #7a00ff,
+  box-shadow: 0 0 15px #00fff2, 0 0 25px #0091ff, 0 0 35px #7a00ff,
     0 0 45px #ff00c8;
-  filter: brightness(1.3);
+  filter: brightness(10);
   cursor: pointer;
 }
 
 @keyframes neonFlow {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 50% 100%; }
+  50% { background-position: 100% 50%; }
+  75% { background-position: 50% 0%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ============================================================
+   End of Neon Scrollbar Design
+   Tip: Looks best with dark UI backgrounds (#000–#121212)
+   ============================================================ */
+
+/* === Fullscreen Preloader start=== */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #020b14;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  overflow: hidden;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* === Glowing Loader Ring === */
+.loader-ring {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top: 4px solid #00fff2;
+  animation: spin 1.2s linear infinite, glow 6s linear infinite;
+  background: linear-gradient(
+    120deg,
+    #00fff2,
+    #0091ff,
+    #7a00ff,
+    #ff00c8,
+    #ff007a
+  );
+  background-size: 400%;
+  box-shadow: 0 0 10px #00fff2, 0 0 20px #0091ff, 0 0 30px #7a00ff,
+    0 0 40px #ff00c8;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glow {
   0% {
     background-position: 0% 50%;
   }
@@ -58,9 +113,33 @@ html {
   }
 }
 
+/* === Loading Text === */
+.loading-text {
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  margin-top: 20px;
+  text-transform: uppercase;
+  animation: pulse 1.5s infinite ease-in-out;
+}
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 
-/* Desig scroolbar end */
+/* === Hide animation === */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+/* === Fullscreen Preloader end=== */
 
 .box {
   width: 145px !important;

@@ -114,8 +114,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //this is for Experiance, Education,project and Certificate .ejs   End
 
-//typing effect in hero section start
+/* === Fullscreen Preloader javascript start=== */
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("hidden");
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 800);
+});
+/* === Fullscreen Preloader java script end=== */
 
+//  If user scrolled more than 100px — show the "Back to Top" button start
 
-
-//typing effect in hero section end
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 100) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+//  If user scrolled more than 100px — show the "Back to Top" button End
