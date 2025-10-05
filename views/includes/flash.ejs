@@ -1,16 +1,54 @@
 <style>
+  /* 🌐 Base Glass Alert Style */
   .glass-alert {
-    background: rgba(255, 255, 255, 0.2); /* transparent white */
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px); /* frosted effect */
-    -webkit-backdrop-filter: blur(10px); /* Safari support */
-    color: #000; /* dark text for contrast */
-    box-shadow: 0 10px 32px 0 rgba(35, 42, 143, 0.351);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #000;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
     border-radius: 12px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+  }
+
+  /* 🌙 Dark Mode Version */
+  body.dark-theme .glass-alert {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    box-shadow: 0 8px 32px 0 rgba(0, 255, 255, 0.15);
+  }
+
+  /* ⚙️ Responsive & Subtle Touches */
+  .glass-alert {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .glass-alert .btn-close {
+    filter: invert(0); /* Light theme default */
+    opacity: 0.6;
+  }
+
+  body.dark-theme .glass-alert .btn-close {
+    filter: invert(1); /* Make close button visible on dark */
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .glass-alert {
+      width: 90% !important;
+      margin-left: 5% !important;
+    }
   }
 </style>
+
 <% if (success && success.length > 0) { %>
-<div class="alert glass-alert alert-dismissible fade show col-6 offset-3 mt-4">
+<div
+  class="alert glass-alert alert-dismissible fade show col-10 col-md-6 offset-1 offset-md-3 mt-4 text-center"
+  role="alert"
+>
   <%= success %>
   <button
     type="button"

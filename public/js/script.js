@@ -126,11 +126,19 @@ window.addEventListener("load", () => {
 
 //  If user scrolled more than 100px — show the "Back to Top" button start
 
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 100) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
-});
+  // 🪄 Smooth scroll to top
+  document.getElementById("backToTop").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // 🎢 Toggle visibility when scrolling
+  window.addEventListener("scroll", () => {
+    const button = document.getElementById("backToTop");
+    if (window.scrollY > 250) {
+      button.classList.add("show");
+    } else {
+      button.classList.remove("show");
+    }
+  });
 //  If user scrolled more than 100px — show the "Back to Top" button End
