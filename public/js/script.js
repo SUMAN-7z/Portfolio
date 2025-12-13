@@ -142,3 +142,14 @@ window.addEventListener("load", () => {
     }
   });
 //  If user scrolled more than 100px — show the "Back to Top" button End
+
+
+
+
+//Admin Dash
+const btn = document.getElementById("adminBtn");
+
+btn.ondblclick = function () {
+  btn.disabled = true;
+  window.location.replace(`/Admin?AccessToken=${AccessToken}`);
+};

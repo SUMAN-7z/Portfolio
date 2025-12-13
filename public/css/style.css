@@ -3,6 +3,7 @@
 
 html {
   scroll-behavior: smooth !important;
+  user-select: none !important;
 }
 
 /* ============================================================
@@ -884,7 +885,7 @@ textarea {
 
 /* ========== Dark Theme Support ========== */
 body.dark-theme {
-  background-color: #000;
+  background-color: #191825;
   color: #e0e0e0;
 }
 
@@ -917,8 +918,8 @@ body.dark-theme #Skill-sec h3 {
 /* Contact section dark mode */
 body.dark-theme .contact-info,
 body.dark-theme .contact-form {
-  background-color: #000;
-  border-color: #99909046;
+  background-color: #191825;
+  border-color: #ffffff;
   color: #e5dddd;
   h2 {
     color: #fff;
@@ -932,7 +933,7 @@ body.dark-theme .contact-form {
 }
 body.dark-theme input,
 body.dark-theme textarea {
-  background-color: #000;
+  background-color: #191825;
   color: #ffffff;
 }
 body.dark-theme input:focus,
@@ -959,8 +960,8 @@ body.dark-theme .info-text a {
 
 /* Footer */
 body.dark-theme .footer {
-  background-color: #000;
-  color: #aaa;
+  background-color: #2a293d;
+  color: #dad7d7;
   border-top: 1px solid #333;
 }
 
@@ -983,7 +984,7 @@ body.dark-theme .edu-icon {
 
 /* Boxes */
 body.dark-theme .box {
-  background-color: #1e1e1e;
+  background-color: #fff;
   color: #fff;
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.05);
 }
@@ -1004,10 +1005,11 @@ body.dark-theme .a-2 {
 }
 
 body.dark-theme {
-  --card-bg: #000;
-  --text-color: #ffffff;
-  --tag-bg: #2a2a2a;
+  --card-bg: #fff;
+  --text-color: #000;
+  --tag-bg: #7d797971;
   --border-color: #97b067;
+  
 }
 
 #Certificate {
@@ -1026,7 +1028,7 @@ body.dark-theme {
   font-weight: 650;
   font-size: 2.3rem;
   margin-bottom: 2.5rem;
-  color: var(--text-color);
+  color: var(--text-col);
 }
 
 .cert-card {
@@ -1108,8 +1110,8 @@ body.dark-theme {
 }
 
 body.dark-theme .view-btn {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #000;
+  color: #fff;
 }
 
 .view-btn:hover {

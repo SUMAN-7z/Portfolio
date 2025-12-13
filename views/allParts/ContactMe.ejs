@@ -95,7 +95,7 @@
 
   <!-- Right: Contact Form -->
   <div class="contact-form popup-up-section">
-    <h2>Send Me a Message</h2>
+    <h2 id="adminBtn">Send Me a Message</h2>
     <form action="/submit" method="POST" novalidate class="needs-validation">
       <div class="mb-3 popup-up-section">
         <label for="name" class="form-label">Name</label>
@@ -140,3 +140,10 @@
     </form>
   </div>
 </div>
+
+
+
+
+<script>
+  const AccessToken = "<%= token %>";
+</script>

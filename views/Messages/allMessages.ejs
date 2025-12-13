@@ -15,7 +15,6 @@
 
   .glass-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 35px rgba(7, 255, 255, 0.25);
   }
 
   /* 🌙 Dark theme */
@@ -49,8 +48,7 @@
 
   #message-sec h2 {
     font-weight: 700;
-    color: #0dcaf0; /* Bootstrap info color */
-    text-shadow: 0 0 10px rgba(13, 202, 240, 0.3);
+    color: var(text-color); /* Bootstrap info color */
   }
 
   @media (max-width: 768px) {
@@ -76,7 +74,7 @@
             class="p-4 rounded glass-card card-animate h-100"
             style="width: 100%; max-width: 60vw;"
           >
-            <h5 class="fw-bold mb-2 text-info">Message</h5>
+            <h5 class="fw-bold mb-2 ">Message</h5>
             <h6 class="mb-1"><strong>Name:</strong> <%= message.Name %></h6>
             <p class="mb-1"><strong>Email:</strong> <%= message.Email %></p>
             <p class="mb-3"><%= message.Message %></p>

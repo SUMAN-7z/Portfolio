@@ -145,7 +145,61 @@
 
   <!-- Illustration Image -->
   <div class="skills-image">
-    <img src="programmer.svg" alt="Skills Illustration" />
+    <svg
+  width="240"
+  height="260"
+  viewBox="0 0 240 360"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- Bench / ground (NOT tilted) -->
+  <g
+    fill="none"
+    stroke="#ff2e2e"
+    stroke-width="4"
+    stroke-linecap="round"
+  >
+    <line x1="0" y1="220" x2="240" y2="220" />
+  </g>
+
+  <!-- Character (tilted left) -->
+  <g
+    transform="rotate(-6 120 180)"
+    fill="none"
+    stroke="#ff2e2e"
+    stroke-width="4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+
+    <!-- Head -->
+    <circle cx="120" cy="70" r="28" />
+
+    <!-- Body (two loose strokes) -->
+    <path d="M112 102 c-14 52 -20 82 -30 118" />
+    <path d="M128 104 c12 50 20 80 28 116" />
+
+    <!-- Legs hanging -->
+    <path d="M86 220 c-8 36 -10 70 -8 110" />
+    <path d="M146 220 c26 42 34 70 38 110" />
+
+    <!-- Resting arm -->
+    <path d="M104 128 c-28 24 -40 42 -52 66" />
+
+    <!-- Raised waving arm -->
+    <path d="M134 114 c54 -36 82 -72 100 -126">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        values="-3 134 114; 6 134 114; -3 134 114"
+        dur="1s"
+        repeatCount="indefinite"
+      />
+    </path>
+
+  </g>
+</svg>
+
   </div>
 </div>
 

@@ -62,9 +62,13 @@ app.use((req, res, next) => {
   next();
 });
 
+
 app.get("/", (req, res) => {
-  res.render("allParts/index");
+  res.render("allParts/index", {
+    token: process.env.AccessToken
+  });
 });
+
 
 const validateMessage = (req, res, next) => {
   let { error } = messageSchema.validate(req.body.connect);
@@ -95,6 +99,7 @@ app.get("/Admin", async (req, res) => {
   } else {
     res.render("includes/pageNotFound.ejs");
   }
+  
 });
 
 app.use((req, res) => {
@@ -105,6 +110,9 @@ app.use((error, req, res, next) => {
   let { status = 500, message = "Something Went Wrong!" } = error;
   res.status(status).render("error.ejs", { error });
 });
+
+
+
 
 app.listen(PORT, () => {
   console.log("server is listening to port 8080");
