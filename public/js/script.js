@@ -141,7 +141,7 @@ function showWords() {
   index++;
 
   if (index < words.length) {
-    setTimeout(showWords, 400);
+    setTimeout(showWords, 200);
   } else {
     textFinished = true;
     tryReveal();
@@ -165,15 +165,15 @@ function tryReveal() {
   if (!textFinished || !pageLoaded) return;
 
   // small pause like Dennis-style
-  setTimeout(runReveal, 500);
+  setTimeout(runReveal, 100);
 }
 
 function runReveal() {
   gsap.to(preloader, {
     scale: 15,
     opacity: 0,
-    duration: 1,
-    ease: "power3.inOut",
+    duration: .75,
+    ease: "power4.inOut",
     onComplete: finish,
   });
 }
