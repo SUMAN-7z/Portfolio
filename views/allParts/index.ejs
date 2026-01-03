@@ -32,7 +32,6 @@
     background-size: 500%;
   }
 
-
   /* ✨ Hover effects */
   #backToTop:hover {
     transform: translateY(-5px) scale(1.05);
@@ -55,9 +54,54 @@
       font-size: 20px;
     }
   }
+
+  /* ===============================
+    START CUSTOM BLURRED PORTFOLIO BACKGROUND  FOR DARK MODE
+   =============================== */
+
+  .bg-root {
+    position: fixed;
+    inset: 0;
+    z-index: -100;
+    overflow: hidden;
+  }
+
+  /* Animated color depth */
+  .bg-gradient {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      130deg,
+      rgba(161, 0, 255, 0.35),
+      rgba(255, 0, 106, 0.25),
+      rgba(0, 255, 255, 0.22)
+    );
+    animation: bgHue 14s linear infinite;
+  }
+
+  @keyframes bgHue {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    50% {
+      filter: hue-rotate(110deg);
+    }
+    100% {
+      filter: hue-rotate(0deg);
+    }
+  }
+  /* ===============================
+    END CUSTOM BLURRED PORTFOLIO BACKGROUND  FOR DARK MODE
+   =============================== */
 </style>
 <% layout("layouts/boilerplate") %>
-
+<!-- ===== START Custom Blurred Background (FOR DARK MODE) ===== -->
+<div class="bg-root">
+  <div class="bg-image"></div>
+  <div class="bg-gradient"></div>
+  <div class="bg-noise"></div>
+</div>
+<!-- ===== END Custom Blurred Background (FOR DARK MODE) ===== -->
 <!-- Preloader start-->
 <div id="preloader">
   <div class="cube-loader">
@@ -279,4 +323,3 @@ include("../allParts/Education.ejs")%> <%- include("../allParts/MySkills.ejs")%>
 <%- include("../allParts/Projects.ejs")%> <%-
 include("../allParts/certificate.ejs")%> <%-
 include("../allParts/ContactMe.ejs")%>
-

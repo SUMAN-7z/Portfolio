@@ -11,12 +11,13 @@ const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
+const cookieParser = require("cookie-parser");
 
 PORT = process.env.PORT;
 
 // const DB_URL = process.env.LOCAL_DB_URL;
 
-const DB_URL = process.env.ATLASDB_URL || process.env.LOCAL_DB_URL;
+const DB_URL = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
@@ -32,6 +33,8 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.engine("ejs", ejsMate);
 app.use(express.static(path.join(__dirname, "public")));
+app.use(cookieParser());
+
 app.use(express.urlencoded({ extended: true }));
 
 const store = MongoStore.create({
