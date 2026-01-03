@@ -1,4 +1,9 @@
-const words = ["Full Stack Developer  ", "MERN Stack Developer ", "Web Application Developer  "];
+const typingWords = [
+  "Full Stack Developer",
+  "MERN Stack Developer",
+  "Web Application Developer"
+];
+
 const typingText = document.getElementById("typing-text");
 let wordIndex = 0;
 let charIndex = 0;
@@ -7,8 +12,8 @@ let typingDelay = 100;
 let erasingDelay = 100;
 let nextWordDelay = 1000;
 
-const type = () => {
-  const currentWord = words[wordIndex];
+function type() {
+  const currentWord = typingWords[wordIndex];
 
   if (!isDeleting) {
     typingText.textContent = currentWord.substring(0, charIndex + 1);
@@ -26,14 +31,16 @@ const type = () => {
 
     if (charIndex === 0) {
       isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
+      wordIndex = (wordIndex + 1) % typingWords.length;
       setTimeout(type, 500);
     } else {
       setTimeout(type, erasingDelay);
     }
   }
-};
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (words.length) type();
+  if (typingWords.length && typingText) {
+    type();
+  }
 });

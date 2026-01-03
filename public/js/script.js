@@ -115,36 +115,93 @@ document.addEventListener("DOMContentLoaded", () => {
 //this is for Experiance, Education,project and Certificate .ejs   End
 
 /* === Fullscreen Preloader javascript start=== */
+const words = [
+  "• नमस्कार",
+  "• ନମସ୍କାର",
+  "• Hello",
+  "• Bonjour",
+  "• Hola",
+  "• Ciao",
+  "• こんにちは",
+];
+let index = 0;
+
+const greetingEl = document.getElementById("greetings");
+const preloader = document.getElementById("preloader");
+const mainContent = document.getElementById("mainContent");
+
+let textFinished = false;
+let pageLoaded = false;
+
+/* -------------------------
+   TEXT SEQUENCE
+-------------------------- */
+function showWords() {
+  greetingEl.textContent = words[index];
+  index++;
+
+  if (index < words.length) {
+    setTimeout(showWords, 400);
+  } else {
+    textFinished = true;
+    tryReveal();
+  }
+}
+
+showWords();
+
+/* -------------------------
+   PAGE LOAD DETECTION
+-------------------------- */
 window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  preloader.classList.add("hidden");
-  setTimeout(() => {
-    preloader.style.display = "none";
-  }, 800);
+  pageLoaded = true;
+  tryReveal();
 });
+
+/* -------------------------
+   REVEAL ONLY WHEN BOTH DONE
+-------------------------- */
+function tryReveal() {
+  if (!textFinished || !pageLoaded) return;
+
+  // small pause like Dennis-style
+  setTimeout(runReveal, 500);
+}
+
+function runReveal() {
+  gsap.to(preloader, {
+    scale: 15,
+    opacity: 0,
+    duration: 1,
+    ease: "power3.inOut",
+    onComplete: finish,
+  });
+}
+
+function finish() {
+  preloader.remove();
+  mainContent.style.visibility = "visible";
+}
 /* === Fullscreen Preloader java script end=== */
 
 //  If user scrolled more than 100px — show the "Back to Top" button start
 
-  // 🪄 Smooth scroll to top
-  document.getElementById("backToTop").addEventListener("click", (e) => {
-    e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
+// 🪄 Smooth scroll to top
+document.getElementById("backToTop").addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
-  // 🎢 Toggle visibility when scrolling
-  window.addEventListener("scroll", () => {
-    const button = document.getElementById("backToTop");
-    if (window.scrollY > 250) {
-      button.classList.add("show");
-    } else {
-      button.classList.remove("show");
-    }
-  });
+// 🎢 Toggle visibility when scrolling
+window.addEventListener("scroll", () => {
+  const button = document.getElementById("backToTop");
+  if (window.scrollY > 250) {
+    button.classList.add("show");
+  } else {
+    button.classList.remove("show");
+  }
+});
 //  If user scrolled more than 100px — show the "Back to Top" button End
-
-
-
 
 //Admin Dash
 const btn = document.getElementById("adminBtn");
