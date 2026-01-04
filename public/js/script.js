@@ -165,7 +165,7 @@ function tryReveal() {
   if (!textFinished || !pageLoaded) return;
 
   // small pause like Dennis-style
-  setTimeout(runReveal, 100);
+  setTimeout(runReveal, 400);
 }
 
 function runReveal() {
