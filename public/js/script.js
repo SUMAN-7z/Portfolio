@@ -116,8 +116,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* === Fullscreen Preloader javascript start=== */
 const words = [
-  "• Hello",
   "• Bonjour",
+  "• Hello",
   "• Hola",
   "• Ciao",
   "• こんにちは",
