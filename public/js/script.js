@@ -117,12 +117,12 @@ document.addEventListener("DOMContentLoaded", () => {
 /* === Fullscreen Preloader javascript start=== */
 const words = [
   "• नमस्कार",
-  "• ନମସ୍କାର",
   "• Hello",
   "• Bonjour",
   "• Hola",
   "• Ciao",
   "• こんにちは",
+  "• ନମସ୍କାର",
 ];
 let index = 0;
 
@@ -172,7 +172,7 @@ function runReveal() {
   gsap.to(preloader, {
     scale: 15,
     opacity: 0,
-    duration: .75,
+    duration: 0.75,
     ease: "power4.inOut",
     onComplete: finish,
   });
