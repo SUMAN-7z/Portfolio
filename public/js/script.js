@@ -116,13 +116,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 /* === Fullscreen Preloader javascript start=== */
 const words = [
-  "• नमस्कार",
   "• Hello",
   "• Bonjour",
   "• Hola",
   "• Ciao",
   "• こんにちは",
   "• ନମସ୍କାର",
+  "• नमस्कार",
 ];
 let index = 0;
 
