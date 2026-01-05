@@ -26,7 +26,7 @@
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.3",
     "mongodb": "^6.17.0",
-    "mongoose": "^8.16.1",
+    "mongoose": "^8.16.1"
   },
   "devDependencies": {
     "tailwindcss": "^4.1.15"
