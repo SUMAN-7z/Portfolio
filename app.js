@@ -12,7 +12,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo");
 const flash = require("connect-flash");
 const cookieParser = require("cookie-parser");
-
 PORT = process.env.PORT;
 
 // const DB_URL = process.env.LOCAL_DB_URL;
@@ -71,6 +70,8 @@ app.get("/", (req, res) => {
     token: process.env.AccessToken
   });
 });
+
+
 
 
 const validateMessage = (req, res, next) => {
